@@ -1,3 +1,4 @@
+console.log('Arrays - Exercises')
 /**
  * Arbeitet in folgenden Aufgaben mit dem folgenden Array.
  * Falls hier jemand kein Anime mag, dann tut es mir nur halb leid.
@@ -15,6 +16,7 @@ const strawHatPirates = [
     'Franky',
     'Brook',
     'Jinbei',
+    'Usopp',
 ]
 
 console.log(strawHatPirates)

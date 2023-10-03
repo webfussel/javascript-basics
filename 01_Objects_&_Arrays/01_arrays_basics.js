@@ -6,6 +6,12 @@ console.log('Arrays - Basics')
  */
 const oneValue = 123
 
+/**
+ * Arrays werden mit eckigen Klammern erstellt.
+ * Die Werte werden mit Kommas getrennt.
+ * Die Werte können beliebige Datentypen sein.
+ * Die Werte können auch Variablen, Funktionen oder Ausdrücke sein.
+ */
 const arr = [1]
 const severalValues = ['a', 2, 3, 4, 5]
 const severalValues2 = [1, '2', 3, '4', 5, true, false, () => {
