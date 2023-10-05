@@ -46,5 +46,8 @@ console.log('Aufgabe 4:', task4)
 // Aufgabe 5
 // Gib die Namen aller Crewmitglieder aus, die mehr als 8 Buchstaben in ihrem Namen haben.
 
+
 // Aufgabe 6
 // Erstelle programmatisch ein Array, dass die Anzahl der Zeichen in den Namen der Crewmitglieder enthält.
+const task6 = strawHatPirates.map(element => element.length)
+console.log('Aufgabe 6:', task6)

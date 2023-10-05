@@ -10,6 +10,10 @@ function something (name) {
 
 const arrow = name => 'hallo ' + name
 
+const arrowLong = (name) => {
+    return 'hallo ' + name
+}
+
 const another = function () {
     return 123
 }

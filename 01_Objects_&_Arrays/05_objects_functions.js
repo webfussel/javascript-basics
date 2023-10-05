@@ -9,6 +9,10 @@ const luffy = {
     devilFruit: 'Gum Gum Fruit',
     position: 'Captain',
     age: 19,
+    a: {
+        asdf: 'dsa',
+        gab: 'asdkl'
+    }
 }
 
 // Object.keys
@@ -33,6 +37,11 @@ const hasSwimmingSkill = Object.hasOwn(luffy, 'swimmingSkill')
 console.log('luffy - has devil fruit', hasDevilFruit)
 console.log('luffy - has swimming skill', hasSwimmingSkill)
 
+const hasDevilFruitB = !!luffy.devilFruit
+const hasSwimmingSkillB = !!luffy.swimmingSkill
+console.log('luffy - has devil fruit', hasDevilFruitB)
+console.log('luffy - has swimming skill', hasSwimmingSkillB)
+
 // Object.assign
 // Kopiert alle Schlüssel-Wert-Paare von einem Objekt in ein anderes.
 const objA = {
@@ -50,18 +59,23 @@ console.log('objA', objA)
 console.log('objB', objB)
 console.log('objC', objC)
 
+const clone = Object.assign({}, objB)
+clone.b = 123
+console.log('clone', clone)
+
 // Object.freeze
 // Verhindert, dass das Objekt verändert werden kann.
 const frozenLuffy = Object.freeze(luffy)
 // Auskommentiert, weil Fehler
 // frozenLuffy.age = 20
+// frozenLuffy.swimmingSkill = true
 console.log('frozenLuffy', frozenLuffy)
 
 // Object.seal
 // Verhindert, dass neue Schlüssel hinzugefügt oder bestehende Schlüssel gelöscht werden können.
 // Allerdings können die Werte der Schlüssel noch verändert werden.
 const sealedLuffy = Object.seal(luffy)
-sealedLuffy.bla = 'asdf'
+// sealedLuffy.bla = 'asdf'
 console.log('sealedLuffy', sealedLuffy)
 
 // Object.isFrozen

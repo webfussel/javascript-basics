@@ -75,3 +75,12 @@ console.log('strawHatPirates', strawHatPirates)
  */
 console.log('strawHatPirates - captain', strawHatPirates.captain)
 console.log('strawHatPirates - Captain', strawHatPirates.Captain)
+
+console.log('Ship', strawHatPirates.ship.name)
+
+const bla = {
+    name: 'asdf',
+    Name: 'asdf',
+    nAme: 'asdas',
+    naMe: 'asdasf',
+}
