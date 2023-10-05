@@ -68,8 +68,11 @@ console.log('strawHatPiratesWithMoreMembers', strawHatPiratesWithMoreMembers)
 // Wir können den Spread-Operator auch verwenden, um Objekte und Arrays zu zerlegen.
 // Wenn wir also nur gewisse Felder aus einem Object wollen, können wir den Rest Operator nutzen, um die restlichen Felder rauszuziehen.
 // Hier nutzen wir zusätzlich das sogenannte 'destructuring'.
-const { captain, ...restOfCrew } = strawHatPiratesWithMoreMembers
+const { captain, crew : crewVar, ...restOfCrew } = strawHatPiratesWithMoreMembers
+
 console.log('captain', captain)
+console.log('captain', strawHatPiratesWithMoreMembers.captain)
+console.log('crewVar', crewVar)
 console.log('restOfCrew', restOfCrew)
 
 // Wir können den Rest-Operator auch verwenden, um nur gewisse Werte aus einem Array zu bekommen.
