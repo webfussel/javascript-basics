@@ -79,6 +79,10 @@ console.log('firstCrewMember', firstCrewMember)
 console.log('secondCrewMember', secondCrewMember)
 console.log('restOfCrewMembers', restOfCrewMembers)
 
+// Ihr könnt auch bewusst einträge überspringen.
+const [,, thirdCrewMember] = strawHatPiratesWithMoreMembers.crew
+console.log('thirdCrewMember', thirdCrewMember)
+
 // Zusätzlich ermöglichen uns Spread und Rest auch Arrays und Objekte oberflächlich zu kopieren.
 const strawHatPiratesCopy = { ...strawHatPirates }
 console.log('strawHatPiratesCopy', strawHatPiratesCopy)
