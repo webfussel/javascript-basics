@@ -7,21 +7,27 @@ console.log('Functions - Properties, Callbacks & this')
  * Sie können auch als Parameter übergeben, als Rückagabewerte definiert und in Variablen gespeichert werden.
  */
 
-const iAmAFunction = () => {
-    console.log('I am a function')
+const iAmAFunction = (a, b) => {
+    console.log('I am a function', a, b)
 }
 
 // Wir können Funktionen als Parameter übergeben.
 const iAmAHigherOrderFunction = (fn) => {
     console.log('I am a higher order function')
-    fn()
+    fn?.()
 }
 
-iAmAHigherOrderFunction(iAmAFunction)
+
+iAmAHigherOrderFunction(() => iAmAFunction(123, 321))
+const add = (a, b) => a + b
+iAmAHigherOrderFunction(() => add(1,2))
+
+iAmAHigherOrderFunction()
 
 // Wir können Funktionen als Rückgabewerte definieren.
 const iAmAHigherOrderFunction2 = () => {
     console.log('I am a higher order function')
+
     return () => {
         console.log('I am a return value. And also a function.')
     }
@@ -30,24 +36,41 @@ const iAmAHigherOrderFunction2 = () => {
 const returnValue = iAmAHigherOrderFunction2()
 returnValue()
 
+const closure = (options) => {
+    let i = 0
+
+    return (b) => {
+        return {
+            i: i++,
+            b,
+            options,
+        }
+    }
+}
+
+const opts = closure({a: 1, b: 2})
+console.log(opts('b'))
+console.log(opts('c'))
+console.log(opts('d'))
+
 /**
  * Da Funktionen Objekte sind, können wir ihnen auch Eigenschaften zuweisen.
  * Wir können ihnen sogar Eigenschaften zuweisen, die Funktionen sind.
  * Diese Funktionen können dann auf die Eigenschaften der Funktion zugreifen.
  */
-
 const iAmAFunctionWithProperties = () => {
     console.log('I am a function with properties')
 }
 
-iAmAFunctionWithProperties.property = 'I am a property'
+iAmAFunctionWithProperties.asdf = 'I am a property'
 iAmAFunctionWithProperties.propertyFunction = () => {
     console.log('I am a property function')
-    console.log('I can access the property of the function:', iAmAFunctionWithProperties.property)
+    console.log('I can access the property of the function:', iAmAFunctionWithProperties.asdf)
 }
+iAmAFunctionWithProperties.propertyFunction.asdf = 'asdf'
 
 iAmAFunctionWithProperties()
-console.log(iAmAFunctionWithProperties.property)
+console.log(iAmAFunctionWithProperties.asdf)
 iAmAFunctionWithProperties.propertyFunction()
 
 /**
@@ -66,10 +89,11 @@ const functionContainer = {
         console.log('I am a better function declaration', this.name, param1, param2)
     }
 }
-
+console.log()
 functionContainer.arrowFunction('Parameter1', 'Parameter2')
 functionContainer.functionDeclaration('Parameter1', 'Parameter2')
 functionContainer.betterFunctionDeclaration('Parameter1', 'Parameter2')
+console.log()
 
 // HAHA, ABER!!!
 const arrowFunction = functionContainer.arrowFunction

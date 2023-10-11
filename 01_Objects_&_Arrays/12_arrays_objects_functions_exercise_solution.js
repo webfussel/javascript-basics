@@ -21,8 +21,21 @@ console.log('Array - Objects - Functions - Exercise')
 // Aufgabe 4: Die Übergabeparameter für MyArray sollen das Array vorbefüllen
 
 // Viel Erfolg!
-function MyArray () {
-    // implementiere mich!
+function MyArray (...args) {
+    args.forEach((element, index) => {
+        this[index] = element
+    })
+
+    this.push = function () {}
+    this.pop = function () {}
+    this.unshift = function () {}
+    this.shift = function () {}
+    this.map = function () {
+        return []
+    }
+    this.filter = function () {
+        return []
+    }
 }
 
 

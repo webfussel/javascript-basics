@@ -1,5 +1,6 @@
 console.log('Functions - Pass by Value & Reference')
 
+let i = 0
 /**
  * Wenn wir mit Funktionen arbeiten, müssen wir uns mit dem Thema "Pass by Value & Reference" auseinandersetzen.
  * Wir haben bereits gelernt, dass es in JavaScript zwei grundlegende Arten von Objekten gibt:
@@ -57,7 +58,8 @@ function pureFunction(data) {
     return data + ' - I am pure'
 }
 
-let i = 0
+const add = (a, b) => a + b
+
 function impureFunction(data) {
     return data + ` - I am impure ${i++}`
 }
