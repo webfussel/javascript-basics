@@ -1,4 +1,4 @@
-console.log('Advanced Functions')
+console.log('Functions - Properties, Callbacks & this')
 
 /**
  * ALLES in JavaScript ist ein Objekt.
