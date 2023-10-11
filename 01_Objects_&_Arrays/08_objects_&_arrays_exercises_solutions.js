@@ -82,13 +82,15 @@ console.log('Aufgabe 4:', warlordsCopy)
 //     ...
 // }
 // Das Objekt soll programmatisch erstellt werden. NICHT PER HAND!
-const task5 = warLordsOfTheSea.reduce((result, current) => {
+const reduce = (result, current) => {
     const key = current.name
     const value = current.exBounty === 'unknown' || current.exBounty === null ? 0 : current.exBounty
 
     result[key] = value
     return result
-}, {})
+}
+
+const task5 = warLordsOfTheSea.reduce(reduce, {})
 console.log('Aufgabe 5:', task5)
 
 // Aufgabe 6:
