@@ -18,6 +18,32 @@ console.log('Array - Objects - Functions - Exercise')
 // Aufgabe 1: Implementiere die Methoden 'push' und 'pop'
 // Aufgabe 2: Implementiere die Methoden 'unshift' und 'shift'
 // Aufgabe 3: Implementiere die Methoden 'map' und 'filter'
+// Aufgabe 4: Die Übergabeparameter für MyArray sollen das Array vorbefüllen
 
 // Viel Erfolg!
 function MyArray () {}
+
+
+// Tests
+const myArray = new MyArray(1, 2, 3, 4, 5)
+console.log('length works correctly', myArray.length === 5)
+myArray.push(6)
+console.log('push works correctly', myArray.length === 6)
+console.log('push works correctly', myArray[5] === 6)
+const pop = myArray.pop()
+console.log('pop works correctly', myArray.length === 5)
+console.log('pop works correctly', pop === 6)
+myArray.unshift(0)
+console.log('unshift works correctly', myArray.length === 6)
+console.log('unshift works correctly', myArray[0] === 0)
+const shift = myArray.shift()
+console.log('shift works correctly', myArray.length === 5)
+console.log('shift works correctly', shift === 0)
+const mappedArray = myArray.map((value) => value * 2)
+console.log('map works correctly', mappedArray.length === 5)
+console.log('map works correctly', mappedArray[0] === 2, mappedArray[1] === 4, mappedArray[2] === 6, mappedArray[3] === 8, mappedArray[4] === 10)
+const filteredArray = myArray.filter((value) => value % 2 === 0)
+console.log('filter works correctly', filteredArray.length === 2)
+console.log('filter works correctly', filteredArray[0] === 2, filteredArray[1] === 4)
+console.log('myArray is unchanged', myArray.length === 5)
+console.log('myArray is unchanged', myArray[0] === 1, myArray[1] === 2, myArray[2] === 3, myArray[3] === 4, myArray[4] === 5)
