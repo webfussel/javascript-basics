@@ -21,12 +21,12 @@ console.log('Array - Objects - Functions - Exercise')
 // Aufgabe 4: Die Übergabeparameter für MyArray sollen das Array vorbefüllen
 
 // Viel Erfolg!
-function MyArray (...args) {
-    args.forEach((element, index) => {
-        this[index] = element
-    })
+function MyArray () {
+    for (let i = 0; i < arguments.length; i++) {
+        this[i] = arguments[i]
+    }
 
-    this.length = args.length
+    this.length = arguments.length
 
     this.push = function (element) {
         this[this.length] = element
@@ -105,3 +105,9 @@ console.log('filter works correctly', filteredArray.length === 2)
 console.log('filter works correctly', filteredArray[0] === 2, filteredArray[1] === 4)
 console.log('myArray is unchanged', myArray.length === 5)
 console.log('myArray is unchanged', myArray[0] === 1, myArray[1] === 2, myArray[2] === 3, myArray[3] === 4, myArray[4] === 5)
+
+
+
+/**
+ * Wenn ihr wollt könnt ihr noch weitere Array Methoden implementieren! Ist eine gute Übung.
+ */
