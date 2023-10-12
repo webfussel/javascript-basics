@@ -26,15 +26,54 @@ function MyArray (...args) {
         this[index] = element
     })
 
-    this.push = function () {}
-    this.pop = function () {}
-    this.unshift = function () {}
-    this.shift = function () {}
-    this.map = function () {
-        return []
+    this.length = args.length
+
+    this.push = function (element) {
+        this[this.length] = element
+        this.length++
     }
-    this.filter = function () {
-        return []
+
+    this.pop = function () {
+        const element = this[this.length - 1]
+        delete this[this.length - 1]
+        this.length--
+        return element
+    }
+
+    this.unshift = function (element) {
+        for (let i = this.length; i > 0; i--) {
+            this[i] = this[i - 1]
+        }
+        this[0] = element
+        this.length++
+    }
+
+    this.shift = function () {
+        const element = this[0]
+        for (let i = 0; i < this.length; i++) {
+            this[i] = this[i + 1]
+        }
+        delete this[this.length - 1]
+        this.length--
+        return element
+    }
+
+    this.map = function (cb) {
+        const newArray = new MyArray()
+        for (let i = 0; i < this.length; i++) {
+            newArray.push(cb(this[i], i, this))
+        }
+        return newArray
+    }
+
+    this.filter = function (cb) {
+        const newArray = new MyArray()
+        for (let i = 0; i < this.length; i++) {
+            if (cb(this[i], i, this)) {
+                newArray.push(this[i])
+            }
+        }
+        return newArray
     }
 }
 
