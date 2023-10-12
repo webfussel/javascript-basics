@@ -14,14 +14,47 @@ const konstruktor = new RegExp('abc')
 const password = 'mageis123'
 
 const hasNumber = /\d/
+const hasNumberAlternative = /[0-9]/
 const hasUpperCase = /[A-Z]/
 const hasLowerCase = /[a-z]/
 const hasSpecialCharacter = /[^A-Za-z0-9]/
+
+/**
+ * Es gibt noch viele weitere Token
+ * \d => Ziffer
+ * \D => Keine Ziffer
+ * \w => Wortzeichen (Alles von a-z, A-Z, 0-9 und _)
+ * \W => Kein Wortzeichen
+ * \s => Whitespace (Leerzeichen, Tab, Zeilenumbruch)
+ * \S => Kein Whitespace
+ * . => Jedes Zeichen
+ * \. => Punkt
+ */
 
 console.log('hasNumber', hasNumber.test(password))
 console.log('hasUpperCase', hasUpperCase.test(password))
 console.log('hasLowerCase', hasLowerCase.test(password))
 console.log('hasSpecialCharacter', hasSpecialCharacter.test(password))
+
+/**
+ * Zusätzlich gibt es sogenannte Quantifiers, die die Anzahl der Vorkommen definieren.
+ * ? => 0 oder 1
+ * * => 0 oder mehr
+ * + => 1 oder mehr
+ * {n} => n
+ * {n,} => n oder mehr
+ * {n,m} => n bis m
+ */
+
+
+const i = 'i i i i i i i i i i i i i i'
+const ii = 'ii ii iii ii iii ii'
+const iii = 'iiiiiiiiiiiiiiiiiiiiiiiiii'
+const iRegex = /i{2,}/
+
+console.log('iRegex', iRegex.test(i))
+console.log('iRegex', iRegex.test(ii))
+console.log('iRegex', iRegex.test(iii))
 
 // Der Aufbau eines Regex kann sehr komplex werden.
 // Es gibt eine Standarddefinition eines E-Mail Regex, der aber nicht alle Fälle abdeckt.
@@ -30,6 +63,7 @@ console.log('hasSpecialCharacter', hasSpecialCharacter.test(password))
 // Es gibt aber auch Tools, die einem dabei helfen können.
 // https://regexr.com/
 // https://regex101.com/
+// https://debuggex.com/
 // Ich habe Kollegen, die selbst nach 20 Jahren die Finger davon lassen
 // Aber weiter im Text.
 

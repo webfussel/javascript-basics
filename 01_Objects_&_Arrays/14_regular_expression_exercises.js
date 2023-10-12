@@ -3,6 +3,7 @@ console.log('Regular Expression - Exercises')
  * Da Regex echt nichts einfaches ist, nutzt gerne die Hilfeseiten.
  * https://regexr.com/
  * https://regex101.com/
+ * https://debuggex.com/
  *
  * Nutzt bitte keine KI, die euch die Regex schreibt.
  * Ihr betrügt euch damit nur selbst.
