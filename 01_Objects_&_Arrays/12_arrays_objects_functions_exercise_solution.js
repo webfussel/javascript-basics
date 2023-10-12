@@ -59,6 +59,8 @@ function MyArray (...args) {
     }
 
     this.map = function (cb) {
+        if (typeof cb !== 'function') throw new Error('No callback function provided')
+
         const newArray = new MyArray()
         for (let i = 0; i < this.length; i++) {
             newArray.push(cb(this[i], i, this))
@@ -67,6 +69,8 @@ function MyArray (...args) {
     }
 
     this.filter = function (cb) {
+        if (typeof cb !== 'function') throw new Error('No callback function provided')
+
         const newArray = new MyArray()
         for (let i = 0; i < this.length; i++) {
             if (cb(this[i], i, this)) {
