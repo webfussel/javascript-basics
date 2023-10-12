@@ -63,7 +63,8 @@ function MyArray () {
 
         const newArray = new MyArray()
         for (let i = 0; i < this.length; i++) {
-            newArray.push(cb(this[i], i, this))
+            const callbackResult = cb(this[i], i, this)
+            newArray.push(callbackResult)
         }
         return newArray
     }
@@ -73,7 +74,8 @@ function MyArray () {
 
         const newArray = new MyArray()
         for (let i = 0; i < this.length; i++) {
-            if (cb(this[i], i, this)) {
+            const isTrue = cb(this[i], i, this)
+            if (isTrue) {
                 newArray.push(this[i])
             }
         }
@@ -105,8 +107,6 @@ console.log('filter works correctly', filteredArray.length === 2)
 console.log('filter works correctly', filteredArray[0] === 2, filteredArray[1] === 4)
 console.log('myArray is unchanged', myArray.length === 5)
 console.log('myArray is unchanged', myArray[0] === 1, myArray[1] === 2, myArray[2] === 3, myArray[3] === 4, myArray[4] === 5)
-
-
 
 /**
  * Wenn ihr wollt könnt ihr noch weitere Array Methoden implementieren! Ist eine gute Übung.
