@@ -11,13 +11,13 @@ const standard = /abc/
 const konstruktor = new RegExp('abc')
 
 // Wir können Regex nutzen, um zum Beispiel ein Passwort auf verschieden Kriterien zu prüfen.
-const password = 'mageis123'
 
 const hasNumber = /\d/
 const hasNumberAlternative = /[0-9]/
+const hasNumberAlternativeAlternative = /[0123456789]/
 const hasUpperCase = /[A-Z]/
 const hasLowerCase = /[a-z]/
-const hasSpecialCharacter = /[^A-Za-z0-9]/
+const hasSpecialCharacter = /[^A-Za-z0-9\s]/
 
 /**
  * Es gibt noch viele weitere Token
@@ -31,6 +31,7 @@ const hasSpecialCharacter = /[^A-Za-z0-9]/
  * \. => Punkt
  */
 
+const password = 'mageis123!'
 console.log('hasNumber', hasNumber.test(password))
 console.log('hasUpperCase', hasUpperCase.test(password))
 console.log('hasLowerCase', hasLowerCase.test(password))
@@ -45,7 +46,6 @@ console.log('hasSpecialCharacter', hasSpecialCharacter.test(password))
  * {n,} => n oder mehr
  * {n,m} => n bis m
  */
-
 
 const i = 'i i i i i i i i i i i i i i'
 const ii = 'ii ii iii ii iii ii'
@@ -68,9 +68,9 @@ console.log('iRegex', iRegex.test(iii))
 // Aber weiter im Text.
 
 // Wir können Regex nutzen, um Zeichenketten zu ersetzen.
-const text = 'Ich bin ein Text und ich habe ein paar Wörter im Text, die ich im Text ersetzen möchte.'
-const regex = /text/gi
-const newText = text.replace(regex, 'Fisch')
+const text = 'Ich    bin ein     Text und ich    habe ein paar Wörter  im text, die ich im  Text ersetzen möchte.'
+const regex = /\s{2,}/g
+const newText = text.replace(regex, ' ')
 
 console.log('newText', newText)
 
@@ -79,10 +79,12 @@ console.log('newText', newText)
 // i steht für case insensitive und ersetzt auch somit alle vorkommnisse unabhängig von Groß- und Kleinschreibung
 
 // Wir können Regex nutzen, um Zeichenketten zu suchen.
-const text2 = 'Ich bin ein Text und ich habe ein paar Wörter im Text, die ich im Text ersetzen möchte.'
+const text2 = 'Ich bin ein Text und ich habe ein paar Wörter im text, die ich im TExt ersetzen möchte.'
 const regex2 = /text/gi
 const found = text2.match(regex2)
+const repl = text2.replace(regex2, 'Text')
 
+console.log('repl', repl)
 console.log('found', found)
 
 // Ihr könnt sogenannte Capturing Groups nutzen, um Teile des Regex zu speichern.
