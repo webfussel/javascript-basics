@@ -47,5 +47,6 @@ console.log('Aufgabe 4: Ruffy', regex4.test(ruffy))
 // Aufgabe: 5
 // Schreibe eine Regex, welches Monkey D. NAME matched und dann NAME entfernt.
 // Beispiele: Monkey D. Ruffy, Monkey D. Ace, Monkey D. Dragon, Monkey D. Garp => Monkey D.
-const regex5 = /(Monkey D.)( [A-Z][a-z]+)/g
-console.log('Aufgabe 5: ', text.replace(regex5, '$1'))
+const name = 'Monkey D. Luffy'
+const regex5 = /(Monkey D.)( [A-Z][a-z]+)/
+console.log('Aufgabe 5:', name.replace(regex5, '$1'))
