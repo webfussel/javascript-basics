@@ -20,7 +20,7 @@ class Person {
 
     greet () {
         console.log(`Hello, my name is ${this.name}.`)
-        console.log(`My DNA sequence is ${Person.dnaSequence}.`)
+        console.log(`My DNA sequence is ${this.#dnaSequence}.`)
     }
 
     #createDNASequence = (length) => {

@@ -20,6 +20,7 @@ class Person {
 
 const person = new Person('Monkey D. Luffy')
 person.greet()
+console.log(person.name)
 
 /**
  * Das sieht schon sehr ähnlich zu dem Konstruktor aus, den wir vorher hatten.
@@ -82,6 +83,8 @@ console.log(person2.name)
 class Person3 {
     #name
 
+    #age
+
     #dnaSequence
 
     constructor(name) {
@@ -101,6 +104,23 @@ class Person3 {
         this.#name = name
     }
 
+    get age() {
+        return this.#age
+    }
+
+    set age(age) {
+        if (age < 0) {
+            this.#age = 0
+            return
+        }
+
+        if (age > 150) {
+            this.#age = 150
+            return
+        }
+        this.#age = age
+    }
+
     get dnaSequence() {
         return this.#dnaSequence
     }
@@ -111,6 +131,7 @@ class Person3 {
     }
 }
 
+console.log('Person3')
 const person3 = new Person3('Monkey D. Luffy')
 person3.greet()
 console.log(person3.name)
@@ -119,6 +140,12 @@ person3.name = 'Ruffy'
 console.log(person3.name)
 person3.name = ''
 console.log(person3.name)
+person3.age = -123
+console.log(person3.age)
+person3.age = 123
+console.log(person3.age)
+person3.age = 24231
+console.log(person3.age)
 
 /**
  * Getter und Setter nutzen wir hier wie ganz normale Felder, obwohl sie in der Klasse wie Funktionen aussehen.
