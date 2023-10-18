@@ -30,3 +30,15 @@
 // (Kielholen: Man bindet den Piraten an den Füßen fest und wirft ihn über Bord. Er wird dann unter dem Schiff durchgezogen und stirbt.)
 // ((Das müsst ihr natürlich nicht entwickeln. Es reichen Console logs.))
 // Wenn ein Crewmitglied stirbt, ist es selbstverständlich nicht mehr Teil der Crew und muss entfernt werden.
+
+// Aufgabe 7: Erstelle eine Klasse "RedRumPirate", die von der Klasse "Pirate" erbt.
+// Überschreibe den setter des Feldes "name" so, dass der Name immer folgende Struktur haben muss:
+// - 3 Teile getrennt durch ein Leerzeichen
+// - Jeder Teil muss mit einem Großbuchstaben beginnen
+// - Der erste Teil muss "Red" sein
+// - Der zweite Teil muss aus 3-5 Buchstaben bestehen
+// - Der dritte Teil muss aus 3-5 Buchstaben bestehen
+
+
+// BONUS: Der zweite Teil des Namens muss einer aus einer Liste von verschiedenen Alkoholsorten entsprechen, die in einem Array abgelegt sind.
+// (Tipp: RegExp Constructor statt /blabla/)
