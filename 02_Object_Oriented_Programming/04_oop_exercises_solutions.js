@@ -216,7 +216,7 @@ class RedRumPirate extends Pirate {
         }
 
         // if (!RedRumPirate.#nameCheckers.second(second)) {
-        //     console.error('Second part of name must contain 3-7 letters, starting with Uppercase!', `Tried to apply ${second}`)
+        //     console.error('Second part of name must contain 3-7 letters, starting with Uppercase!', `Tried to apply ${second} (${second.length})`)
         //     return
         // }
 
