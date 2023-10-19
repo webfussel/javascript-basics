@@ -238,7 +238,7 @@ class RedRumPirate extends Pirate {
     }
 }
 
-// const whiskeyJack = new RedRumPirate('Red Apple Jack', 100_000_000, 'Whiskey-Whiskey Fruit')
+// const whiskeyJack = new RedRumPirate('Red Whiskey Jack', 100_000_000, 'Whiskey-Whiskey Fruit')
 // console.log(whiskeyJack.name)
 // whiskeyJack.name = 'Red Vodka John'
 //
