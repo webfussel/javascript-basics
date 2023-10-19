@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="module" src="noclass.js"></script>
+</head>
+<body>
+<h1>Formular</h1>
+
+<form novalidate>
+    <div>
+        <div class="form-field">
+            <input
+                name="Vorname"
+                data-regex="[A-Z][a-z]{1,}"
+                data-message="Das Feld muss mit einem Großbuchstaben beginnen und mindestens aus zwei Buchstaben bestehen."
+                type="text"
+                placeholder="Vorname"
+            />
+            <div class="message"></div>
+        </div>
+
+        <div class="form-field">
+            <input name="Straße Hausnummer" data-regex=".+" type="text" placeholder="Straße Hausnummer" />
+            <div class="message"></div>
+        </div>
+
+        <div class="form-field">
+            <input name="Postleitzahl" data-regex="" type="text" placeholder="Postleitzahl" />
+            <div class="message"></div>
+        </div>
+
+        <div class="form-field">
+            <select name="Farbe">
+                <option>Red</option>
+                <option>Green</option>
+                <option>Blue</option>
+            </select>
+            <div class="message"></div>
+        </div>
+    </div>
+    <input type="submit" value="Abschicken" />
+</form>
+
+<form novalidate>
+    <div>
+        <input data-regex="[A-Z][a-z]{1,}" type="text" placeholder="Nachname" />
+        <input data-regex=".+" type="text" placeholder="Stadt" />
+    </div>
+    <input type="submit" value="Abschicken" />
+</form>
+
+</body>
+</html>

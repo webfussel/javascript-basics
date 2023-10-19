@@ -195,9 +195,9 @@ class RedRumPirate extends Pirate {
     static #alcohol = ['Whiskey', 'Vodka', 'Rum', 'Beer', 'Wine', 'Tequila', 'Gin', 'Schnaps', 'Absinth', 'Sake']
 
     static #nameCheckers = {
-        first: (name) => /^Red/.test(name),
+        first: (name) => /^Red$/.test(name),
         second: (name) => /^[A-Z][a-z]{2,6}$/.test(name),
-        secondBonus: (name) => new RegExp(`^${this.#alcohol.join('|')}`).test(name),
+        secondBonus: (name) => new RegExp(`${this.#alcohol.join('|')}`).test(name),
         third: (name) => /^[A-Z][a-z]{2,4}$/.test(name)
     }
 
@@ -211,23 +211,19 @@ class RedRumPirate extends Pirate {
         const [first, second, third] = value.split(' ')
 
         if (!RedRumPirate.#nameCheckers.first(first)) {
-            console.error('Name must start with "Red"!', `Tried to apply ${first}`)
-            return
+            throw new Error(`Name must start with "Red". Tried to apply ${first}`)
         }
 
         // if (!RedRumPirate.#nameCheckers.second(second)) {
-        //     console.error('Second part of name must contain 3-7 letters, starting with Uppercase!', `Tried to apply ${second} (${second.length})`)
-        //     return
+        //     throw new Error(`Second part of name must contain 3-7 letters, starting with Uppercase! Tried to apply ${second} (${second.length})`)
         // }
 
         if (!RedRumPirate.#nameCheckers.secondBonus(second)) {
-            console.error('Second part of name must be in the list of allowed beverages!', `Tried to apply ${second} (${second.length})`)
-            return
+            throw new Error(`Second part of name must be in the list of allowed beverages! Tried to apply ${second}`)
         }
 
         if (!RedRumPirate.#nameCheckers.third(third)) {
-            console.error('Third part of name must contain 3-5 letters, starting with Uppercase!', `Tried to apply ${third} (${third.length}})`)
-            return
+            throw new Error(`Third part of name must contain 3-5 letters, starting with Uppercase! Tried to apply ${third} (${third.length})`)
         }
 
         this.#name = value
@@ -238,8 +234,7 @@ class RedRumPirate extends Pirate {
     }
 }
 
-// const whiskeyJack = new RedRumPirate('Red Whiskey Jack', 100_000_000, 'Whiskey-Whiskey Fruit')
-// console.log(whiskeyJack.name)
-// whiskeyJack.name = 'Red Vodka John'
-//
-// console.log(whiskeyJack.name)
+const whiskeyJack = new RedRumPirate('Red Whiskey Jack', 100_000_000, 'Whiskey-Whiskey Fruit')
+console.log(whiskeyJack.name)
+whiskeyJack.name = 'Red Vodka John'
+console.log(whiskeyJack.name)
