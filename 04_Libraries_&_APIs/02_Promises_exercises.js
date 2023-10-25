@@ -8,8 +8,9 @@ console.log('Promises - Exercises')
 
 // Aufgabe 2: Erstelle eine Funktion, die ein Promise zurückgibt.
 // Die Funktion soll einen String entgegen nehmen.
-// Wenn der String ein valides Passwort ist ist, soll das Promise erfüllt werden.
-// Passwortvorgaben: Mindestens 8 Zeichen, mindestens ein Großbuchstabe, mindestens eine Zahl, mindestens ein Kleinbuchstabe
+// Wenn der String ein valides Passwort ist, soll das Promise erfüllt werden.
+// Passwortvorgaben: Mindestens 8 Zeichen, mindestens ein Großbuchstabe,
+// mindestens eine Zahl, mindestens ein Kleinbuchstabe
 
 
 // Aufgabe 3: Lass beide Promises parallel laufen und gib die Ergebnisse in der Konsole aus.

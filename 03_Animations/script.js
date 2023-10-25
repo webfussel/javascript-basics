@@ -1,5 +1,5 @@
 // Wähle ein Element für die Animation aus
-const box = document.querySelector('.box');
+const box = document.querySelector('.box')
 
 // Hier erstellen wir an Array an Objekten, die die Eigenschaften der Animation beschreiben
 // Wir können dadurch mehrere Keyframes definieren, die dann nacheinander abgespielt werden
@@ -9,7 +9,7 @@ const keyframes = [
     {
         left: '-1500px',
         transform: 'scaleX(1)',
-        offset: 0.25
+        offset: .25
     },
     {
         left: '-1500px',
@@ -26,7 +26,7 @@ const keyframes = [
         transform: 'scaleX(1)',
         offset: .76
     },
-];
+]
 
 // Hier spielen wir mit unserer Box ein bisschen ping pong
 const options = {
@@ -34,22 +34,22 @@ const options = {
     direction: 'normal', // normale Richtung
     iterations: Infinity, // unendlich oft wiederholen
     composite: 'replace',
-};
+}
 
 // Erstelle ein KeyframeEffect-Objekt, das die Animation beschreibt
 // Wir übergeben unsere Box, die Keyframes und die Optionen
-const animation = new KeyframeEffect(box, keyframes, options);
+const animation = new KeyframeEffect(box, keyframes, options)
 
-const timeline = document.timeline; // Verwende die Dokumentzeitlinie
-const anim = new Animation(animation, timeline);
+const timeline = document.timeline // Verwende die Dokumentzeitlinie
+const anim = new Animation(animation, timeline)
 
 
 // Starte die Animation per Knopfdruck
 document.querySelector('#start').addEventListener('click', () => {
-    anim.play();
+    anim.play()
 })
 
 // Unterbreche die Animation per Knopfdruck
 document.querySelector('#pause').addEventListener('click', () => {
-    anim.pause();
+    anim.pause()
 })
