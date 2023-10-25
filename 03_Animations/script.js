@@ -6,10 +6,26 @@ const box = document.querySelector('.box');
 // Die Eigenschaften, die nicht explizit angegeben werden, werden von der Animation nicht verändert
 // Hier verändern wir nur die Eigenschaft transform, die die Position des Elements verändert
 const keyframes = [
-    { transform: 'translateX(-150%) scaleX(1)', offset: 0.25 },
-    { transform: 'translateX(-200%) scaleX(-1)', offset: .26 },
-    { transform: 'translateX(150%) scaleX(-1)', offset: .75 },
-    { transform: 'translateX(150%) scaleX(1)', offset: 1 },
+    {
+        left: '-1500px',
+        transform: 'scaleX(1)',
+        offset: 0.25
+    },
+    {
+        left: '-1500px',
+        transform: 'scaleX(-1)',
+        offset: .26
+    },
+    {
+        left: '2500px',
+        transform: 'scaleX(-1)',
+        offset: .75
+    },
+    {
+        left: '2500px',
+        transform: 'scaleX(1)',
+        offset: .76
+    },
 ];
 
 // Hier spielen wir mit unserer Box ein bisschen ping pong

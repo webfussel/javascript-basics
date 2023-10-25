@@ -1,3 +1,7 @@
+html, body {
+    overflow: hidden;
+}
+
 .box {
     position: relative;
     top: 150px;
