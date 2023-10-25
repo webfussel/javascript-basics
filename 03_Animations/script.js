@@ -44,5 +44,12 @@ const timeline = document.timeline; // Verwende die Dokumentzeitlinie
 const anim = new Animation(animation, timeline);
 
 
-// Starte die Animation
-anim.play();
+// Starte die Animation per Knopfdruck
+document.querySelector('#start').addEventListener('click', () => {
+    anim.play();
+})
+
+// Unterbreche die Animation per Knopfdruck
+document.querySelector('#pause').addEventListener('click', () => {
+    anim.pause();
+})
