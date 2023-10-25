@@ -133,3 +133,34 @@ const doSomething = async () => {
 }
 
 doSomething()
+
+// Wir können auch mehrere Promises parallel ausführen.
+// Dazu verwenden wir Promise.all()
+const doSomethingElse = async () => {
+    try {
+        const data = await Promise.all([
+            strawhatPiratesPromiseResolves(),
+            strawhatPiratesPromiseRandomlyFails(),
+        ])
+        console.log('doSomethingElse:', data)
+    } catch (e) {
+        console.log('doSomethingElse:', e)
+    }
+}
+
+doSomethingElse()
+
+// Mit await können wir die Promises nacheinander ausführen.
+// Das kann häufiger gewünscht sein, falls manche Anfragen von vorigen abhängen.
+
+const doSomethingElseAgain = async () => {
+    try {
+        const data = await strawhatPiratesPromiseResolves()
+        const data2 = await strawhatPiratesPromiseRandomlyFails()
+        console.log('doSomethingElseAgain:', data, data2)
+    } catch (e) {
+        console.log('doSomethingElseAgain:', e)
+    }
+}
+
+doSomethingElseAgain()
