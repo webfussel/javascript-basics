@@ -1,0 +1,12 @@
+.box {
+    position: relative;
+    top: 150px;
+    left: 100%;
+    transform-origin: center;
+}
+
+.water {
+    height: 500px;
+    width: 100%;
+    background: blue;
+}
