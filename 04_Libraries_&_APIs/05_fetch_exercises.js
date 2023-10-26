@@ -11,11 +11,12 @@ console.log('Fetch - Exercises')
 // Aufgabe 0
 // Schreibe einen Zufallszahlengenerator, der eine Zahl von 1 bis einschließlich 1017 zurückgibt.
 
+
 // Aufgabe 1
 // Nutze deinen Zahlengenerator.
 // Hole dir dann von der PokéAPI das entsprechende Pokémon.
 // Gib den Namen des Pokémon auf der Konsole aus
-// https://pokeapi.co/api/v2/EURE_ZUFALLSZAHL
+// https://pokeapi.co/api/v2/pokemon/EURE_ZUFALLSZAHL
 
 
 // Aufgabe 2

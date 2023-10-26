@@ -10,10 +10,14 @@ console.log('Fetch')
 const getData = async (url) => {
     try {
         const response = await fetch(url)
-        const data = await response.json()
-        console.log(data)
+        if (response.status === 200) {
+            const data = await response.json()
+            console.log(data)
+        } else {
+            console.error('Something went wrong!', response.status, response.statusText)
+        }
     } catch (e) {
-        console.error(e)
+        console.error('Something went wrong :(', e)
     }
 }
 
@@ -57,6 +61,7 @@ const postAndGetData = async (url, data) => {
         const res = await response.json()
         console.log(res)
         const response2 = await fetch(`${url}/${res.id}`)
+        console.log(response2.status)
         const res2 = await response2.json()
         console.log(res2)
     } catch (e) {
