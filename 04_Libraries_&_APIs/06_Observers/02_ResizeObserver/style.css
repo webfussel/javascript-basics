@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+[class*='box'] {
+    padding: 20px;
+}
+
+.resize-box {
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+    margin: 10px;
+    float: left;
+}
+
+.dynamic-box {
+    background-color: lightgreen;
+}
