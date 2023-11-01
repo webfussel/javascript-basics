@@ -17,14 +17,17 @@ const options = {
 // Der Callback wird immer dann ausgeführt, wenn sich die Überschneidung ändert
 // Hier geben wir einfach nur aus, ob das Element sichtbar ist oder nicht
 const observer = new IntersectionObserver((entries) => {
+    console.log('Entries: ', entries)
     entries.forEach(entry => {
         const { target, isIntersecting } = entry
         const textField = target.querySelector('span')
         if (isIntersecting) {
             textField.innerText = 'Sichtbar'
+            target.classList.remove('inactive')
             console.log(`Das Element ${target.id} ist im Viewport sichtbar.`)
         } else {
             textField.innerText = 'Nicht sichtbar'
+            target.classList.add('inactive')
             console.log(`Das Element ${target.id} ist nicht mehr im Viewport sichtbar.`)
         }
     })

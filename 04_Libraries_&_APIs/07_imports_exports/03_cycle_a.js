@@ -1,9 +1,9 @@
-// import { bFunction } from "./04_cycle_b.js";
-// export const aFunction = (a = 1) => {
-//     return bFunction(a)
-// }
-//
-// console.log('aFunction', aFunction(2))
+import { bFunction } from "./04_cycle_b.js";
+export const aFunction = (a = 1) => {
+    return a + 3
+}
+
+bFunction()
 
 // import { somethingFromB } from "./04_cycle_b.js";
 // export const somethingFromA = () => {

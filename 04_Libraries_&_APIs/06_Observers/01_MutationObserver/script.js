@@ -13,13 +13,19 @@ const printNodeList = (list) => [...list].map(el => printNode(el)).join(' | ')
 // Selektiere das Ziel-Element und erstelle eine Konfiguration für den Observer
 const target = document.getElementById('target')
 // Wir beobachten alle Änderungen am Ziel-Element, ihr könnt aber auch nur bestimmte Mutationen beobachten
-const observerConfig = { attributes: true, childList: true, characterData: true, subtree: true }
+const observerConfig = {
+    attributes: true,
+    childList: true,
+    characterData: true,
+    subtree: true
+}
 
 // Erstelle einen neuen MutationObserver.
 // Im Callback werden die Mutationen übergeben, die beobachtet werden.
 // In diesem Beispiel werden die Mutationen einfach in der Konsole und imL Log ausgegeben.
 // Ihr könnt aber natürlich auch allen möglichen Schabernack mit den Mutationen treiben.
 const observer = new MutationObserver((mutationsList) => {
+    console.log('Mutations List', mutationsList)
     for (let mutation of mutationsList) {
         if (mutation.type === 'childList') {
             if (mutation.addedNodes.length > 0) {
