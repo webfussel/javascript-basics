@@ -1,0 +1,11 @@
+.orb {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background: blue;
+    opacity: 0.2;
+    border-radius: 100%;
+    left: var(--left, 0);
+    top: var(--top, 0);
+    z-index: -1;
+}
