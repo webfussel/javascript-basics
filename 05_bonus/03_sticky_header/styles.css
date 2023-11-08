@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: #333;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 2rem;
+    background: white;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+
+main {
+    white-space: pre-wrap;
+    color: white;
+    padding: 2rem;
+    font-size: 1.5rem;
+}
+
+
+
+
+header {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, var(--alpha, 0));
+    color: rgb(var(--c, 255), var(--c, 255), var(--c, 255));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
