@@ -126,13 +126,13 @@ const strawhatPiratesPromiseRandomlyFails = () => new Promise((resolve, reject) 
     }, 1000)
 })
 //
-// strawhatPiratesPromiseRandomlyFails().then((data) => {
-//     // Wenn der Vorgang erfolgreich abgeschlossen wurde, wird diese Funktion ausgeführt.
-//     console.log('strawhatPiratesPromiseRandomlyFails:', data)
-// }).catch((error) => {
-//     // Wenn der Vorgang fehlschlägt, wird diese Funktion ausgeführt.
-//     console.log('strawhatPiratesPromiseRandomlyFails:', error)
-// })
+strawhatPiratesPromiseRandomlyFails().then((data) => {
+    // Wenn der Vorgang erfolgreich abgeschlossen wurde, wird diese Funktion ausgeführt.
+    console.log('strawhatPiratesPromiseRandomlyFails:', data)
+}).catch((error) => {
+    // Wenn der Vorgang fehlschlägt, wird diese Funktion ausgeführt.
+    console.log('strawhatPiratesPromiseRandomlyFails:', error)
+})
 
 // Seit einer Weile gibt es auch die Möglichkeit, async/await zu verwenden.
 // Diese lassen sich deutlich besser lesen und schöner schreiben.

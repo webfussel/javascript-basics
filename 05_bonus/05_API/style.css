@@ -1,0 +1,9 @@
+.dex {
+    display: flex;
+    flex-direction: column;
+}
+
+.dex img {
+    width: 96px;
+    height: auto;
+}
