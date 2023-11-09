@@ -23,6 +23,7 @@ header {
 
 h1 {
     font-size: 3rem;
+    white-space: nowrap;
 }
 
 header ul {
@@ -50,21 +51,42 @@ header {
     color: rgb(var(--c, 255), var(--c, 255), var(--c, 255));
 }
 
+header .dropdown {
+    scale: 0;
+    transform-origin: top right;
+    transition: 250ms;
+    position: absolute;
+    right: 2rem;
+    top: 7rem;
+    background: white;
+    color: black;
+    border-radius: 4px;
+    padding: 2rem 2rem;
+    border: 1px solid #aaa;
+}
+
+header .dropdown ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+header label {
+    white-space: nowrap;
+}
+
+header input[type="checkbox"] {
+    display: none;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+header input[type="checkbox"]:checked + .dropdown {
+    scale: 1;
+}
 
 
 
